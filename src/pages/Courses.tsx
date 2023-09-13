@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { EnvelopeOpenIcon } from "@radix-ui/react-icons"
 import {
   Table,
   TableBody,
@@ -40,7 +39,7 @@ const Courses = () => {
           </TableHeader>
           <TableBody>
             {Array.from({ length: 10 }, (_, index) => index + 1).map(
-              (ele, idx) => {
+              (_, idx) => {
                 return (
                   <TableRow2
                     key={idx}
