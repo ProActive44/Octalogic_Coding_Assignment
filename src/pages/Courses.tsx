@@ -12,11 +12,11 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getdata } from "../Redux/action.js";
-
+import { Input } from "@/components/ui/input.js";
 
 const Courses = () => {
   const data = useSelector((store: any) => store.data);
-  console.log(data)
+  console.log(data);
 
   const dispatch = useDispatch();
 
@@ -31,9 +31,9 @@ const Courses = () => {
       </div>
       <div className="flex justify-between p-1 text-slate-500 font-bold py-5">
         <p>COURSE LIST</p>
-        <p className="font-medium text-rose-500 transition duration-700 cursor-pointer hover:font-bold">
-          Search
-        </p>
+        <div className="font-medium transition duration-700 hover:font-bold">
+          <Input placeholder="Search"/>
+        </div>
       </div>
       <div className="bg-white p-5 rounded">
         <Table>
