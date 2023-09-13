@@ -14,11 +14,11 @@ const Menu = () => {
         <div className="w-2/3 m-auto my-5 mb-10 cursor-pointer" onClick={() => setHome(true)}>
           <img src={Logo} />
         </div>
-        <div className="w-full m-auto my-5 cursor-pointer" onClick={() => setHome(true)}>
+        <div className="w-11/12 m-auto my-5 cursor-pointer bg-pink-200 p-1 rounded-md" onClick={() => setHome(true)}>
           <img className="w-1/2 m-auto" src={HomeLogo} />
           Home
         </div>
-        <div className="w-full m-auto my-5 cursor-pointer" onClick={() => setHome(false)}>
+        <div className="w-11/12 m-auto my-5 cursor-pointer bg-gray-200 p-1 rounded-md" onClick={() => setHome(false)}>
           <img className="w-1/2 m-auto" src={CoursesLogo} />
           Courses
         </div>
