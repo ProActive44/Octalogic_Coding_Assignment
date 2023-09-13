@@ -8,8 +8,22 @@ import {
   TableRow,
 } from "../components/ui/table";
 import TableRow2 from "@/components/TableRow2";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getdata } from "../Redux/action.js";
+
 
 const Courses = () => {
+  const data = useSelector((store: any) => store.data);
+  console.log(data)
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getdata);
+  }, []);
+
   return (
     <div className="my-10 w-11/12 m-auto">
       <div className="font-bold text-3xl mb-5 text-left">
@@ -38,7 +52,7 @@ const Courses = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {Array.from({ length: 10 }, (_, index) => index + 1).map(
+            {/* {Array.from({ length: 10 }, (_, index) => index + 1).map(
               (_, idx) => {
                 return (
                   <TableRow2
@@ -54,13 +68,29 @@ const Courses = () => {
                   />
                 );
               }
-            )}
+            )} */}
+
+            {data?.map((ele: any, idx: any) => {
+              return (
+                <TableRow2
+                  key={idx}
+                  name={ele.name}
+                  description={ele.desc}
+                  instructor={ele.instructor}
+                  instrument={ele.instrument}
+                  daysofweek={ele.Day}
+                  students={ele.students}
+                  price={ele.price}
+                  status={ele.status}
+                />
+              );
+            })}
           </TableBody>
         </Table>
       </div>
       <div className="text-right mt-20 mr-5">
         <Button className="p-7 bg-pink-300 text-black text-lg hover:bg-pink-600 hover:text-white rounded-md">
-            <p className="text-2xl pr-5">+</p>  Add Course
+          <p className="text-2xl pr-5">+</p> Add Course
         </Button>
       </div>
     </div>

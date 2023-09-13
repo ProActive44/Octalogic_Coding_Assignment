@@ -5,8 +5,10 @@ import Logo from "../assets/Logo.png";
 import HomeLogo from "../assets/Home_Logo.png";
 import CoursesLogo from "../assets/Courses_logo.png";
 
+
 const Menu = () => {
   const [home, setHome] = useState<boolean>(true);
+
 
   return (
     <div className="flex">
