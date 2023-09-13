@@ -5,8 +5,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <Menu name={'Prasad'}/>
+      <div className=''>
+        <Menu/>
       </div>
     </>
   )
